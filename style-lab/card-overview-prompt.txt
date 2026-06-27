@@ -1,0 +1,42 @@
+Use case: infographic-diagram
+Asset type: numbered style selection sheet for Vibe Token Rank card concepts.
+
+Create one large clean selection board containing 20 numbered mini card previews, arranged in a 5-column by 4-row grid. Each cell shows a different vertical Vibe Token Rank card style. This is a style-picking sheet, not a final production card, so prioritize visual distinction, composition, palette, and readable case numbers.
+
+Global data to imply on every mini card:
+- Nickname: Octo-o-o-o
+- Rank: Lv.451
+- Metrics: 近30天总量 29.01B, 近30天日均 1.03B, 连续天数 81
+- Creature: white-feather mythic crane
+- Badges: one wordless prestige medal, three crowns, three stars
+
+Hard layout requirements:
+- Each cell must have a big readable case number in the top-left corner: #01 through #20.
+- Each cell should contain one vertical card thumbnail, not just a flat color swatch.
+- Use original designs only. Do not copy any specific Pinterest pin, artist, franchise, logo, card game frame, anime/manga character, skull emblem, flag, or proprietary wanted-poster template.
+- No real people, no screenshots, no QR codes, no watermarks.
+- The first badge should be a wordless prestige gem/medal, with no visible letter T.
+
+20 cases:
+#01 Wanted Newsprint: vintage printed wanted poster, huge WANTED header, photo panel, DEAD OR ALIVE line, tan newsprint parchment.
+#02 Pixel TCG Relic: 32-bit pixel trading card, chunky rarity frame, indigo, gold, cyan.
+#03 Art Nouveau Oracle: cream-gold oracle card, flowing botanical border, oval halo.
+#04 Cyberpunk Holo ID: futuristic holographic agent ID, neon cyan/magenta HUD.
+#05 Gothic Black Tarot: black tarot, silver ink, cathedral arch, restrained red stamp.
+#06 Risograph Zine: riso poster card, coral/teal overprint, paper grain.
+#07 Botanical Alchemy: emerald glass, gold lab labels, glowing plant magic.
+#08 Celestial Atlas: deep blue star-map museum card, antique gold engraving.
+#09 Mecha Blueprint: dark technical blueprint, cyan schematic lines, armored crane familiar.
+#10 Ukiyo-e Scroll: hand-printed wave/cloud scroll, indigo and vermilion.
+#11 Mono Terminal Poster: black/off-white terminal poster, sparse grid, severe layout.
+#12 Sticker Capsule: glossy die-cut sticker card, soft candy colors, foil sticker rank.
+#13 Stained Glass Icon: jewel-toned cathedral glass, dark lead lines.
+#14 Medieval Bestiary: vellum manuscript, illuminated margins, gold leaf ornament.
+#15 Neon Shrine Arcade: magenta/cyan arcade rank card, geometric shrine-like frame.
+#16 Holographic Foil: iridescent foil trading card, prismatic frame.
+#17 Desert Oracle: sun-baked parchment, turquoise and bronze, spacious desert mood.
+#18 Rune Totem: carved stone border, icy blue light, ancient gem medal, no readable runes.
+#19 Vaporwave Arcade: sunset grid, lavender/cyan chrome, retro score panels.
+#20 Victorian Cabinet Card: sepia antique portrait card, ornate ink corners, wax-stamp rank.
+
+Output should feel like a polished art-director moodboard for choosing the final visual style.

@@ -1,0 +1,63 @@
+Use case: infographic-diagram
+Asset type: one-shot share card generated entirely by image_gen.
+Primary request: create the final complete Token Rank as one polished bitmap image. Include the animal avatar, refined card layout, wordless rank badges, three core metrics, nickname, elegant line, and footer inside the generated image itself. No later SVG or typography pass will be used. Minor small-text imperfections are acceptable, but keep the nickname, level, recent total token, recent daily average, and streak large and clear.
+
+Canvas and layout:
+- Vertical portrait share card, 4:5 ratio, designed as a polished shareable rank artifact, not a dense dashboard.
+- The selected visual style is the primary design language. Do not default to dark fantasy, ornate trading-card borders, neon sci-fi, or centered creature card composition unless this specific style asks for it.
+- Style layout direction: specimen-card layout: central familiar in a glass-garden scene, brass rank plaque, three apothecary metric labels.
+- Composition should still include: small title, nickname, animal/avatar treatment, large Lv.446, wordless badge area, three core metrics, one elegant line, minimal footer.
+- Avoid table-like grids, stacked mini-stat rows, terminal screenshots, dense source panels, excessive borders, and decorative clutter.
+- Use stable safe margins; no symbols cropped at the right edge. If badges are many, wrap them gracefully to multiple centered rows. Do not use multiplication notation such as x2 or ×2.
+
+Identity and rank data to show:
+- Title: VIBE TOKEN RANK
+- Subtitle: 本机 Agent Token 修行卡
+- Nickname: Octo-o-o-o
+- Rank: Lv.446
+- Rank title: 终阶 · Token 神兽使
+- QQ-style badge icons to draw, not text labels. Show only the highest two non-zero badge tiers for clarity; do not draw lower-tier leftovers. Repeat visible icons one-by-one and wrap:
+- badge row 1 icons: wordless faceted aurora relic medal icon / crown icon / crown icon
+
+Metrics to show prominently:
+- 近30天总量: 29.79B
+- 近30天日均: 993.10M
+- 连续天数: 81
+
+Optional tiny source chips, names only and no numbers:
+- Claude Code / Codex / OpenClaw
+
+Elegant line to include:
+「星渊麒麟踏着不息的潮声前行，让万象深处的脉络安静显形。」
+
+Animal avatar direction:
+- Fictional mythic animal: 星渊麒麟
+- Dominant source influence: mixed
+- Pixel fantasy creature, arcane, calm, intelligent, companion-like; no human face and no real person.
+
+Visual style:
+- Visual style preset: 04 Botanical Alchemy / 04 植物炼金.
+- Style direction: botanical alchemy specimen card, emerald glass, gold apothecary labels, glowing plants, living familiar, elegant laboratory magic.
+- Palette: deep green, emerald glass, antique gold, botanical ivory, soft bioluminescent cyan.
+- Make the card feel high-rank in a way native to the selected style. The stronger recent token total, recent daily rhythm, level, and streak should be reflected through more confident composition, stronger presence, richer material detail, or more deliberate whitespace, without explaining that relationship literally.
+- Typography should feel premium and spacious: large display text, short labels, no crowded paragraphs, no tiny exact-number footnotes.
+
+Badge design rules:
+- The first high-tier medal icon must contain no letters, no words, no visible "T", and no small label underneath.
+- The first high-tier medal icon must look clearly above a crown: larger or more luminous than crowns, faceted octagonal/prismatic relic, double halo, star-core, crown-ray accents, ceremonial glow.
+- Crowns, moons, and stars may be familiar icons, but the high-tier medal must be a wordless prestige emblem, not a text badge.
+- Display only the highest two non-zero badge tiers. Do not add lower-tier sun/moon/star leftovers when a higher two-tier pair is already shown.
+
+Footer text:
+- 本地只读生成 · Token 等级仅供娱乐展示
+
+Constraints:
+- Generate the entire card in one image; do not create placeholder boxes for later composition.
+- Use raw total tokens for visible usage metrics. Do not display weighted tokens, cache-adjusted tokens, or any "more valuable" token count.
+- The headline total metric must be 近30天总量: 29.79B.
+- The headline daily metric must be 近30天日均: 993.10M.
+- Do not display historical total, active days, latest streak, longest streak, full exact comma-separated token numbers, date range, rank score, weighted tokens, or source token values.
+- No real people, no brand logos, no screenshots, no watermarks, no QR code.
+- Use an original design. Do not copy anime, manga, game, film, sports-league, fashion-brand, magazine, trading-card, membership-card, or social-template IP; no logos, skull marks, team marks, brand marks, flags, named symbols, or distinctive proprietary layouts.
+- Do not invent extra metrics that conflict with the values above.
+- Avoid tiny unreadable tables; prioritize three large metric values, a visually striking wrapped badge area, and a calmer high-end layout.

@@ -1,0 +1,41 @@
+Use case: stylized-concept
+Asset type: numbered style selection sheet for Vibe Token Rank avatar concepts, batch 2.
+
+Create one large clean selection board containing 20 numbered square avatar previews, arranged in a 5-column by 4-row grid. Use case numbers #21 through #40. Each cell shows a different take on a fictional white-feather crane coding companion. This batch must feel much more diverse, relaxed, editorial, social, cartoon, anthropomorphic, athletic, tactile, and whitespace-heavy than batch 1.
+
+Global avatar subject:
+- Fictional white-feather mythic crane, calm intelligent coding companion.
+- Some cases may be anthropomorphic, but never a real person and never a realistic human face.
+- Keep each avatar usable at small size: strong silhouette, centered enough to read, crisp edges.
+
+Hard style requirements:
+- Each cell must have a big readable case number in the top-left corner: #21 through #40.
+- Each cell should contain one square avatar thumbnail.
+- Make the 20 cells visually distinct in pose, framing, surface, palette, and character energy.
+- Avoid making every avatar the same centered fantasy crane bust.
+- Use original designs only. Do not copy any Pinterest pin, Instagram template, sports-card brand, real team logo, real league mark, franchise character, skull emblem, flag, or proprietary layout.
+- No screenshots, no QR codes, no watermarks.
+
+20 cases:
+#21 Airy Instagram Story: tiny calm crane on warm white background, soft shadow, minimal.
+#22 Sunday Desk Snapshot: crane beside coffee and notebook, cozy daylight.
+#23 Quiet Gallery Label: small framed crane artwork on museum-white field.
+#24 Naive Doodle Rank: wobbly marker doodle crane, intentionally imperfect.
+#25 Soft Cartoon Buddy: anthropomorphic crane buddy in hoodie and tiny headphones.
+#26 Token League Athlete: crane athlete portrait in original abstract jersey, arena light, no logos.
+#27 Editorial Magazine Cover: studio portrait crop, lifestyle lighting, refined.
+#28 Scrapbook Sticker Journal: crane sticker on torn paper and washi tape.
+#29 Bento Widget Board: crane mascot in one soft cream UI tile.
+#30 Cereal Box Mascot: cheerful vintage-packaging crane mascot, no brand.
+#31 Fashion Lookbook Anthro: anthropomorphic crane in oversized jacket, relaxed pose.
+#32 Clay Toy Figure: handmade clay crane toy figurine, pastel set.
+#33 Courtside Mascot Card: cartoon crane athlete with glowing token ball.
+#34 Swiss White Poster: tiny black line-art crane on white grid, one red dot.
+#35 Cozy Cafe Receipt: crane stamp on coffee-stained receipt paper.
+#36 Pop Cartoon Halftone: bold pop-art crane face, halftone dots.
+#37 Children's Book Watercolor: gentle watercolor crane, soft paper grain.
+#38 Luxury Membership Pass: embossed crane monogram on ivory matte paper.
+#39 Running Club Bib: crane runner with abstract bib shape, dynamic stride, no logos.
+#40 Plush Character Drop: fuzzy plush white crane toy headshot, pastel studio.
+
+Output should feel like a polished art-director moodboard with strong diversity and lower visual heaviness than batch 1.

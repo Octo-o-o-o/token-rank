@@ -1,0 +1,7 @@
+interface:
+  display_name: "Token Rank"
+  short_description: "本机 Agent token 用量头像、等级卡和小红书分享包生成器"
+  brand_color: "#22D3EE"
+  default_prompt: "Use $token-rank to generate a Xiaohongshu share pack, nickname=灵狐, public-safe."
+policy:
+  allow_implicit_invocation: true

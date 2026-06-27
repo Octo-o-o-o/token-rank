@@ -1,0 +1,62 @@
+Use case: infographic-diagram
+Asset type: one-shot vertical wanted-poster share card generated entirely by image_gen.
+Primary request: create the final complete Vibe Token Rank wanted poster as one polished bitmap image. The output should read first as a classic printed manga-adventure bounty poster, not as a modern UI dashboard or ornate collectible card.
+
+Canvas and poster layout:
+- Vertical portrait wanted poster, tall paper ratio around 2:3 or 4:5, aged tan newsprint parchment with darker worn edges.
+- Top band: huge bold black serif word "WANTED", spanning almost the full width.
+- Middle: one large rectangular portrait-photo panel with the fictional mythic animal centered, like a printed bounty-photo snapshot.
+- Under the portrait: a compact "DEAD OR ALIVE" line, then the large nickname "Octo-o-o-o", then a large bounty/value line based on the token rank.
+- Bottom area: small official-looking seals/stamps for Lv.446, badge icons, recent daily average, streak days, and local-only note.
+- Keep the composition simple and poster-like: one main photo, one big name, one big bounty number. Do not create a luxury card frame, dashboard grid, terminal screenshot, or multi-panel achievement-card UI.
+- Use stable safe margins; no symbols cropped at the right edge. If badges are many, wrap them as small stamp icons or seal marks. Do not use multiplication notation such as x2, times signs, or grouped counts.
+
+Exact visible text to include:
+- WANTED
+- DEAD OR ALIVE
+- Octo-o-o-o
+- TOKEN BOUNTY 29.79B
+- Lv.446
+- 近30天总量: 29.79B
+- 近30天日均: 993.10M
+- 连续天数: 81
+- 本地只读生成 · Token 等级仅供娱乐展示
+
+QQ-style badge icons to draw, not text labels. Show only the highest two non-zero badge tiers for clarity; do not draw lower-tier leftovers. Repeat visible icons one-by-one and wrap:
+- badge row 1 icons: wordless faceted aurora relic medal icon / crown icon / crown icon
+
+Optional tiny source chips, names only and no numbers:
+- Claude Code / Codex / OpenClaw
+
+Elegant line to include as a small handwritten-style motto:
+「星渊麒麟踏着不息的潮声前行，让万象深处的脉络安静显形。」
+
+Portrait subject:
+- Fictional mythic animal: 星渊麒麟
+- Dominant source influence: mixed
+- Make it a lively hand-drawn manga-adventure animal portrait with a clear expression, clean silhouette, and printed halftone texture. It must not be a real person or a human character.
+
+Visual style:
+- Visual style preset: 01 Wanted Newsprint / 01 印刷悬赏令.
+- Style direction: single vintage wanted bounty poster, huge WANTED header, central portrait photo panel, DEAD OR ALIVE line, oversized nickname and TOKEN BOUNTY value, aged parchment newsprint, simple black ink border.
+- Old adventure manga wanted poster mood: flat warm parchment, black ink typography, slightly faded color portrait, rough paper fibers, stamp marks, simple frame lines, small sea-map doodles.
+- Palette: tan parchment, black/brown ink, faded sky blue, muted coral, antique gold accents.
+- Strong recent token total, daily rhythm, level, and streak should quietly appear as a more imposing bounty value, stronger printed seals, richer paper texture, and more confident portrait presence, without explaining the mapping literally.
+- Typography should be bold and poster-like. Prioritize large readable WANTED, nickname, TOKEN BOUNTY, Lv, and the three metrics.
+
+Badge design rules:
+- The first high-tier medal icon must contain no letters, no words, no visible "T", and no small label underneath.
+- The first high-tier medal icon must look clearly above a crown: larger or more luminous than crowns, faceted octagonal/prismatic relic, double halo, star-core, crown-ray accents, ceremonial glow.
+- Crowns, moons, and stars may be familiar icons, but the high-tier medal must be a wordless prestige emblem, not a text badge.
+- Display only the highest two non-zero badge tiers. Do not add lower-tier sun/moon/star leftovers when a higher two-tier pair is already shown.
+
+Constraints:
+- Generate the entire poster in one image; do not create placeholder boxes for later composition.
+- Use raw total tokens for visible usage metrics. Do not display weighted tokens, cache-adjusted tokens, or any "more valuable" token count.
+- The headline total metric must be 近30天总量: 29.79B.
+- The headline daily metric must be 近30天日均: 993.10M.
+- Do not display historical total, active days, latest streak, longest streak, full exact comma-separated token numbers, date range, rank score, weighted tokens, or source token values.
+- No real people, no brand logos, no screenshots, no watermarks, no QR code.
+- Use an original design. Do not copy or imitate any existing anime, manga, game, or film franchise. No existing characters, no straw-hat character, no named pirate crew, no skull-and-crossbones emblem, no Marine word or crest, no franchise flags, no named treasure symbols, no copied ship designs, and no exact proprietary bounty-poster template.
+- Do not invent extra metrics that conflict with the values above.
+- Avoid ornate fantasy card styling. This should look like a simple printed wanted poster from a fictional seafaring adventure world.

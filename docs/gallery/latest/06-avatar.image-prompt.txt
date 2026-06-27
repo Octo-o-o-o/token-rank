@@ -1,0 +1,12 @@
+Use case: stylized-concept
+Asset type: square Vibe Token Rank avatar generated entirely by image_gen.
+Primary request: create one finished 1:1 style-led fantasy animal avatar. Do not leave blank text areas and do not rely on later SVG/text composition.
+
+Subject: a fictional mythic animal, not a human and not a real person. Species direction: 星渊麒麟, influenced by mixed. The character should quietly imply this usage profile: Lv.446, top-tier wordless medal rank, 近30天总量 29.79B, 近30天日均 993.10M, current streak 81 days.
+
+Style/medium: use the selected visual style as the primary art direction; do not force pixel art unless the selected style asks for it. Keep the avatar readable at small size with a clean silhouette, centered enough to recognize, polished but not overdecorated.
+Visual style preset: 06 Stained Glass Icon / 06 彩窗圣像.
+Style direction: stained-glass animal icon made of luminous glass pieces, dark lead outlines, jewel-tone halo.
+Scene/backdrop: match the selected style direction; include only subtle token/rank hints that do not become text.
+Color palette: sapphire, ruby, amber, emerald, black lead lines, warm candlelight.
+Constraints: no text, no numbers, no letters, no real people, no logos, no watermark, no UI frame. Use an original design; do not copy anime, manga, game, or film characters, symbols, emblems, logos, or distinctive franchise layouts. Avoid photorealism, painterly blur, anime human features, cluttered scenery, and unreadable micro-detail.

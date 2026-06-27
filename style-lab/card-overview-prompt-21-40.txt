@@ -1,0 +1,45 @@
+Use case: infographic-diagram
+Asset type: numbered style selection sheet for Vibe Token Rank card concepts, batch 2.
+
+Create one large clean selection board containing 20 numbered mini card previews, arranged in a 5-column by 4-row grid. Use case numbers #21 through #40. This batch must feel much more diverse, relaxed, editorial, social, cartoon, anthropomorphic, athletic, product-like, and whitespace-heavy than ornate fantasy trading cards.
+
+Global data to imply on every mini card:
+- Nickname: Octo-o-o-o
+- Rank: Lv.451
+- Metrics: 近30天总量 29.01B, 近30天日均 1.03B, 连续天数 81
+- Base creature: white-feather mythic crane
+- Badges: one wordless prestige medal, three crowns, three stars
+
+Hard style requirements:
+- Each cell must have a big readable case number in the top-left corner: #21 through #40.
+- Each cell should contain one vertical card thumbnail.
+- Make the 20 cells look clearly different from each other in layout, pose, subject treatment, and amount of whitespace.
+- Avoid making every card a centered crane inside a heavy ornate frame.
+- Use relaxed layouts, asymmetry, flat lays, studio photos, sticker sheets, athlete cards, magazine covers, receipts, packaging, app widgets, and minimal posters.
+- Use original designs only. Do not copy any Pinterest pin, Instagram template, sports-card brand, real team logo, real league mark, franchise character, skull emblem, flag, or proprietary layout.
+- No real people, no screenshots, no QR codes, no watermarks.
+- The first badge, where shown, must be a wordless prestige gem/medal with no visible letter T.
+
+20 cases:
+#21 Airy Instagram Story: 70% warm white negative space, small crane illustration, thin type, muted beige/sky.
+#22 Sunday Desk Snapshot: relaxed desk flat lay, coffee, notebook, small crane sticker, metrics on sticky notes.
+#23 Quiet Gallery Label: museum-white card, tiny framed crane artwork, sparse caption lines.
+#24 Naive Doodle Rank: wobbly hand-drawn borders, marker fills, intentionally imperfect.
+#25 Soft Cartoon Buddy: anthropomorphic crane coding companion in hoodie, rounded pastel chips.
+#26 Token League Athlete: fictional sports trading card, crane athlete, foil stat bars, no logos.
+#27 Editorial Magazine Cover: lifestyle magazine cover, generous margins, confident portrait, feature callouts.
+#28 Scrapbook Sticker Journal: paper scraps, washi tape, torn labels, sticker photo.
+#29 Bento Widget Board: airy cream app-widget bento layout, soft tiles and spacing.
+#30 Cereal Box Mascot: fictional breakfast packaging, playful mascot, sparse nutrition-stat idea.
+#31 Fashion Lookbook Anthro: anthropomorphic crane in oversized jacket, studio lookbook.
+#32 Clay Toy Figure: handmade clay crane figurine on pastel set, tiny toy placards.
+#33 Courtside Mascot Card: cartoon sports mascot with glowing token ball, trading-card strip.
+#34 Swiss White Poster: strict grid, huge whitespace, black type, tiny crane line art, one red dot.
+#35 Cozy Cafe Receipt: thermal receipt and coffee-stained paper, crane stamp, menu-like stats.
+#36 Pop Cartoon Halftone: bright comic dots, speech bubbles, bold cartoon crane.
+#37 Children's Book Watercolor: soft paper wash, gentle garden path, storybook plaques.
+#38 Luxury Membership Pass: matte ivory card, embossed crane monogram, sparse foil lines.
+#39 Running Club Bib: fictional race bib card, crane runner, lap-split metrics.
+#40 Plush Character Drop: soft plush crane toy, hangtag rank, product-tag metrics.
+
+Output should feel like a polished art-director moodboard with strong diversity and lower visual heaviness than batch 1.

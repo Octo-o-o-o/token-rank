@@ -1,0 +1,39 @@
+Use case: stylized-concept
+Asset type: numbered style selection sheet for Vibe Token Rank avatar concepts.
+
+Create one large clean selection board containing 20 numbered square avatar previews, arranged in a 5-column by 4-row grid. Each cell shows the same fictional white-feather mythic crane coding companion in a different visual style. This is a style-picking sheet, not a final production avatar, so prioritize visual distinction, silhouette, palette, and readable case numbers.
+
+Global avatar subject:
+- Fictional mythic animal, white-feather crane, calm intelligent coding companion.
+- No human face, no real person, no brand logos, no text inside the avatar artwork except the case number label outside or in the cell corner.
+- Keep each avatar usable at small social-avatar size: strong silhouette, centered bust, crisp edges.
+
+Hard layout requirements:
+- Each cell must have a big readable case number in the top-left corner: #01 through #20.
+- Each cell should contain one square avatar thumbnail.
+- Use original designs only. Do not copy any specific Pinterest pin, artist, franchise, logo, card game frame, anime/manga character, skull emblem, flag, or proprietary wanted-poster template.
+- No screenshots, no QR codes, no watermarks.
+
+20 cases:
+#01 Wanted Newsprint: cropped bounty-photo portrait on aged parchment, black ink frame, faded sky background.
+#02 Pixel TCG Relic: crisp 32-bit pixel crane with token pixels and rarity glow.
+#03 Art Nouveau Oracle: flowing cream-gold feather curves, floral halo.
+#04 Cyberpunk Holo ID: glassy neon crane, cyan edge light, magenta token glints.
+#05 Gothic Black Tarot: moonlit silver crane under dark arch.
+#06 Risograph Zine: coral/teal overprint crane, grainy paper texture.
+#07 Botanical Alchemy: luminous leaf feathers, emerald-gold living particles.
+#08 Celestial Atlas: engraved constellation crane with star-map halo.
+#09 Mecha Blueprint: angular crane armor plates, cyan blueprint grid.
+#10 Ukiyo-e Scroll: ink-wash crane with wave-shaped feathers and vermilion seal geometry.
+#11 Mono Terminal Poster: black/off-white pixel-terminal crane silhouette.
+#12 Sticker Capsule: glossy die-cut white crane sticker with soft candy highlights.
+#13 Stained Glass Icon: luminous crane made of glass pieces and dark lead outlines.
+#14 Medieval Bestiary: ink-and-gold crane on vellum with illuminated border.
+#15 Neon Shrine Arcade: cyan-magenta pixel halo, dark arcade glow.
+#16 Holographic Foil: prismatic white crane bust, rainbow refraction.
+#17 Desert Oracle: bronze sun halo, sandy parchment grain.
+#18 Rune Totem: carved-stone halo and icy blue glow, no readable runes.
+#19 Vaporwave Arcade: chrome-edged crane with pastel grid glow.
+#20 Victorian Cabinet Card: sepia studio portrait vignette, antique paper.
+
+Output should feel like a polished art-director moodboard for choosing the final avatar style.
