@@ -61,6 +61,34 @@ Use $token-rank to generate an avatar, nickname=月影.
 
 If the request does not say `avatar` or `card`, the skill must ask for the mode before reading local usage data.
 
+## Recommended Skill Prompts
+
+Use these prompts directly in Codex after installing the skill. Always specify `card`, `avatar`, or `xhs-pack`.
+
+```text
+Use $token-rank to generate a card. Nickname=灵狐, use the default recent-30-day metrics, visual-style=01.
+```
+
+```text
+Use $token-rank to generate an avatar. Nickname=月影, visual-style=08, use local token usage as the seed.
+```
+
+```text
+Use $token-rank to generate a Xiaohongshu share pack. Nickname=灵狐, visual-style=01, public-safe, use approximate Chinese units.
+```
+
+```text
+Use $token-rank to generate a card. Nickname=Octo-o-o-o, visual-style=11, platform=xhs, public-safe, only show the three core metrics and weak top-agent/model chips.
+```
+
+```text
+Use $token-rank to generate a card. Nickname=Cursor兽, include Cursor through this read-only adapter: extra-command="cursor:cursor-usage --json".
+```
+
+```text
+Use $token-rank to generate a card prompt only. Nickname=灵狐, visual-style=06, do not render SVG, write the complete image_gen prompt so I can generate the image separately.
+```
+
 ## CLI Usage
 
 Generate a full card prompt, then pass it to Codex built-in `image_gen` in one shot:

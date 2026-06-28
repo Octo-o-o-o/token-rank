@@ -61,6 +61,34 @@ cp -R .agents/skills/token-rank ~/.agents/skills/
 
 如果用户没有说明“头像”或“卡片”，skill 必须先追问模式，不能读取本机数据。
 
+## 推荐 Skill Prompt
+
+安装 skill 后，可以直接在 Codex 里复制这些 prompt。每次都要明确说 `卡片`、`头像` 或 `小红书分享包`。
+
+```text
+使用 $token-rank，生成卡片，昵称=灵狐，使用默认近30天指标，风格=01。
+```
+
+```text
+使用 $token-rank，生成头像，昵称=月影，风格=08，使用本机 token 用量作为生成 seed。
+```
+
+```text
+使用 $token-rank，生成小红书分享包，昵称=灵狐，风格=01，public-safe，使用中文近似单位。
+```
+
+```text
+使用 $token-rank，生成卡片，昵称=Octo-o-o-o，风格=11，platform=xhs，public-safe，只展示三个核心指标和弱化的 top agent/model 小标签。
+```
+
+```text
+使用 $token-rank，生成卡片，昵称=Cursor兽，通过这个只读适配器纳入 Cursor：extra-command="cursor:cursor-usage --json"。
+```
+
+```text
+使用 $token-rank，只生成卡片生图 prompt，昵称=灵狐，风格=06，不渲染 SVG，把完整 image_gen prompt 写出来，方便我稍后单独生图。
+```
+
 ## 命令行使用
 
 生成卡片 prompt，并交给 Codex 内置 `image_gen` 一次出图：
