@@ -139,7 +139,7 @@ Avatar mode:
 
 - With `image_gen`: generate one complete square style-led fantasy animal avatar bitmap.
 - Fallback: generate a 512x512 SVG pixel fantasy animal avatar.
-- Use nickname, level, token volume, and dominant source as a deterministic seed.
+- Use nickname, level, token volume, dominant source, selected style, and `variationSeed` as the creative seed. The script defaults to a fresh random `variationSeed` for each run; pass `--variation-seed stable` or a custom string to reproduce a look.
 - Do not render real people or realistic portraits.
 
 Card mode:
@@ -147,10 +147,13 @@ Card mode:
 - With `image_gen`: generate one complete vertical share-card bitmap from the script-authored prompt.
 - Fallback: generate a 1080x1350 SVG share card.
 - Include nickname, avatar, level, QQ-style symbols, visible-window raw token total, visible-window raw daily average, current streak days, top 2 agent names, top 2 model names, one elegant metric-aware line, and the local-read-only note.
+- Use a single concise card title: `Token Rank`. Do not render the old two-line title/subtitle pair (`VIBE TOKEN RANK` plus `本机 Agent Token 修行卡`) in generated cards.
 - Keep visible cards concise and premium. Do not show historical total, active days, latest/longest streak, exact comma-separated token counts, date ranges, rank score, weighted tokens, or source token values unless the user asks for a data-heavy version.
 - Render visible QQ-style badges from the highest two non-zero tiers only. Repeat icons one by one, allow line wrapping, and hide lower-tier leftovers. Keep full decomposition in JSON only.
 - Show top agents/models as low-emphasis name-only metadata chips in weak visual positions such as footer rails, lower corners, side captions, or faint stamp strips. Do not show token values for agents/models. Do not let them compete with nickname, level, badges, animal portrait, or the three core metrics.
 - Render the highest-tier T medal as a wordless prestige icon: no letter `T`, no Chinese/English text, no label underneath. It should look clearly more advanced than crowns through scale, halo, facets, or ceremonial framing.
+- Keep the creature identity varied. Treat the named mythic animal as a loose seed and use the script-provided shape/material/pose/accent variation lines; do not repeatedly default to standard dragons, qilins, foxes, wolves, or humanoid mascots unless the selected style requires that silhouette.
+- For image generation, let the default random `variationSeed` increase creature variety across repeated runs. Use `--variation-seed stable` or a custom value only when the user wants reproducible prompts.
 - If the environment supports `rsvg-convert`, ImageMagick, macOS `sips`, or `cairosvg`, `--png` may also export PNG.
 
 For AI image generation, read `references/image-prompts.md`. Let `image_gen` create the whole visual in one pass; only use SVG/HTML for the fallback path.

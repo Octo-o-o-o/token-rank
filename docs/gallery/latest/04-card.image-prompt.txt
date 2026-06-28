@@ -3,7 +3,8 @@ Asset type: one-shot share card generated entirely by image_gen.
 Primary request: create the final complete Token Rank as one polished bitmap image. Include the animal avatar, refined card layout, wordless rank badges, three core metrics, nickname, elegant line, and footer inside the generated image itself. No later SVG or typography pass will be used. Minor small-text imperfections are acceptable, but keep the nickname, level, recent total token, recent daily average, and streak large and clear.
 
 Canvas and layout:
-- Vertical portrait share card, 4:5 ratio, designed as a polished shareable rank artifact, not a dense dashboard.
+- Vertical portrait share card, 4:5 ratio, designed as a polished shareable rank artifact.
+- It must not feel like a dense dashboard.
 - The selected visual style is the primary design language. Do not default to dark fantasy, ornate trading-card borders, neon sci-fi, or centered creature card composition unless this specific style asks for it.
 - Style layout direction: specimen-card layout: central familiar in a glass-garden scene, brass rank plaque, three apothecary metric labels.
 - Composition should still include: small title, nickname, animal/avatar treatment, large Lv.446, wordless badge area, three core metrics, one elegant line, minimal footer.
@@ -11,8 +12,8 @@ Canvas and layout:
 - Use stable safe margins; no symbols cropped at the right edge. If badges are many, wrap them gracefully to multiple centered rows. Do not use multiplication notation such as x2 or ×2.
 
 Identity and rank data to show:
-- Title: VIBE TOKEN RANK
-- Subtitle: 本机 Agent Token 修行卡
+- Title: Token Rank
+- Do not add or render any second subtitle line under the title.
 - Nickname: Octo-o-o-o
 - Rank: Lv.446
 - Rank title: 终阶 · Token 神兽使
@@ -24,16 +25,23 @@ Metrics to show prominently:
 - 近30天日均: 993.10M
 - 连续天数: 81
 
-Optional tiny source chips, names only and no numbers:
-- Claude Code / Codex / OpenClaw
+Low-emphasis metadata chips, names only and no token values:
+- Top agents: Claude Code / Codex
+- Place these in a visually weak position such as a bottom metadata rail, lower corner, side caption, or faint label strip. They must not compete with the nickname, level, animal portrait, badge row, or three core metrics.
 
 Elegant line to include:
-「星渊麒麟踏着不息的潮声前行，让万象深处的脉络安静显形。」
+「星砂貘兽踏着不息的潮声前行，让万象深处的脉络安静显形。」
 
 Animal avatar direction:
-- Fictional mythic animal: 星渊麒麟
+- Fictional mythic animal seed: 星砂貘兽
 - Dominant source influence: mixed
-- Pixel fantasy creature, arcane, calm, intelligent, companion-like; no human face and no real person.
+- Creative variation seed: gallery-04. Use it only to diversify the animal/avatar treatment; do not render it as text.
+- Style-led fantasy creature, arcane, calm, intelligent, companion-like; no human face and no real person.
+- Shape variation: cat-sized chimera with asymmetrical horns, cloud-like fur, and a curled constellation tail.
+- Surface/material mix: athletic fabric accents, polished gem joints, and hand-painted streak marks.
+- Pose/personality: leaning forward in a quiet sprint, energetic but elegant.
+- Small accents: low-contrast rune-like geometry with no readable letters and tiny orbiting token motes.
+- Randomness rule: treat the named species as a loose seed, not a fixed mascot. Make the creature feel fresh and visibly different across generations; avoid defaulting to a standard dragon, qilin, fox, wolf, or humanoid athlete unless the selected style explicitly needs that silhouette.
 
 Visual style:
 - Visual style preset: 04 Botanical Alchemy / 04 植物炼金.
@@ -59,5 +67,5 @@ Constraints:
 - Do not display historical total, active days, latest streak, longest streak, full exact comma-separated token numbers, date range, rank score, weighted tokens, or source token values.
 - No real people, no brand logos, no screenshots, no watermarks, no QR code.
 - Use an original design. Do not copy anime, manga, game, film, sports-league, fashion-brand, magazine, trading-card, membership-card, or social-template IP; no logos, skull marks, team marks, brand marks, flags, named symbols, or distinctive proprietary layouts.
-- Do not invent extra metrics that conflict with the values above.
+- Do not invent extra metrics or extra badge tiers that conflict with the values above.
 - Avoid tiny unreadable tables; prioritize three large metric values, a visually striking wrapped badge area, and a calmer high-end layout.

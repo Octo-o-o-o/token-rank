@@ -1,8 +1,16 @@
 Use case: stylized-concept
-Asset type: square Vibe Token Rank avatar generated entirely by image_gen.
+Asset type: square Token Rank avatar generated entirely by image_gen.
 Primary request: create one finished 1:1 style-led fantasy animal avatar. Do not leave blank text areas and do not rely on later SVG/text composition.
 
-Subject: a fictional mythic animal, not a human and not a real person. Species direction: 星渊麒麟, influenced by mixed. The character should quietly imply this usage profile: Lv.446, top-tier wordless medal rank, 近30天总量 29.79B, 近30天日均 993.10M, current streak 81 days.
+Subject: a fictional mythic animal, not a human and not a real person. Base species seed: 星砂貘兽, influenced by mixed. The character should quietly imply this usage profile: Lv.446, top-tier wordless medal rank, 近30天总量 29.79B, 近30天日均 993.10M, current streak 81 days.
+Creative variation seed: gallery-04. Use it only to diversify the creature design; do not render this seed as visible text.
+
+Character variation:
+- Shape variation: cat-sized chimera with asymmetrical horns, cloud-like fur, and a curled constellation tail.
+- Surface/material mix: athletic fabric accents, polished gem joints, and hand-painted streak marks.
+- Pose/personality: leaning forward in a quiet sprint, energetic but elegant.
+- Small accents: low-contrast rune-like geometry with no readable letters and tiny orbiting token motes.
+- Randomness rule: treat the named species as a loose seed, not a fixed mascot. Make the creature feel fresh and visibly different across generations; avoid defaulting to a standard dragon, qilin, fox, wolf, or humanoid athlete unless the selected style explicitly needs that silhouette.
 
 Style/medium: use the selected visual style as the primary art direction; do not force pixel art unless the selected style asks for it. Keep the avatar readable at small size with a clean silhouette, centered enough to recognize, polished but not overdecorated.
 Visual style preset: 04 Botanical Alchemy / 04 植物炼金.

@@ -1,9 +1,10 @@
 Use case: infographic-diagram
 Asset type: one-shot vertical wanted-poster share card generated entirely by image_gen.
-Primary request: create the final complete Vibe Token Rank wanted poster as one polished bitmap image. The output should read first as a classic printed manga-adventure bounty poster, not as a modern UI dashboard or ornate collectible card.
+Primary request: create the final complete Token Rank wanted poster as one polished bitmap image. The output should read first as a classic printed manga-adventure bounty poster, not as a modern UI dashboard or ornate collectible card.
 
 Canvas and poster layout:
-- Vertical portrait wanted poster, tall paper ratio around 2:3 or 4:5, aged tan newsprint parchment with darker worn edges.
+- Vertical portrait share card, 4:5 ratio, designed as a polished shareable rank artifact.
+- Aged tan newsprint parchment with darker worn edges.
 - Top band: huge bold black serif word "WANTED", spanning almost the full width.
 - Middle: one large rectangular portrait-photo panel with the fictional mythic animal centered, like a printed bounty-photo snapshot.
 - Under the portrait: a compact "DEAD OR ALIVE" line, then the large nickname "Octo-o-o-o", then a large bounty/value line based on the token rank.
@@ -25,16 +26,23 @@ Exact visible text to include:
 QQ-style badge icons to draw, not text labels. Show only the highest two non-zero badge tiers for clarity; do not draw lower-tier leftovers. Repeat visible icons one-by-one and wrap:
 - badge row 1 icons: wordless faceted aurora relic medal icon / crown icon / crown icon
 
-Optional tiny source chips, names only and no numbers:
-- Claude Code / Codex / OpenClaw
+Low-emphasis metadata chips, names only and no token values:
+- Top agents: Claude Code / Codex
+- Place these in a visually weak position such as a lower side seal, footer rail, side stamp, or tiny paper-label strip. They must not compete with the nickname, level, bounty, badge row, or three core metrics.
 
 Elegant line to include as a small handwritten-style motto:
-「星渊麒麟踏着不息的潮声前行，让万象深处的脉络安静显形。」
+「晶角鲸马踏着不息的潮声前行，让万象深处的脉络安静显形。」
 
 Portrait subject:
-- Fictional mythic animal: 星渊麒麟
+- Fictional mythic animal seed: 晶角鲸马
 - Dominant source influence: mixed
+- Creative variation seed: gallery-01. Use it only to diversify the portrait; do not render it as text.
 - Make it a lively hand-drawn manga-adventure animal portrait with a clear expression, clean silhouette, and printed halftone texture. It must not be a real person or a human character.
+- Shape variation: bird-mammal silhouette with layered feather cape, small hooves, and a sharp mask-like face.
+- Surface/material mix: athletic fabric accents, polished gem joints, and hand-painted streak marks.
+- Pose/personality: leaning forward in a quiet sprint, energetic but elegant.
+- Small accents: paper talisman ribbons without readable text and tiny orbiting token motes.
+- Randomness rule: treat the named species as a loose seed, not a fixed mascot. Make the creature feel fresh and visibly different across generations; avoid defaulting to a standard dragon, qilin, fox, wolf, or humanoid athlete unless the selected style explicitly needs that silhouette.
 
 Visual style:
 - Visual style preset: 01 Wanted Newsprint / 01 印刷悬赏令.
@@ -58,5 +66,5 @@ Constraints:
 - Do not display historical total, active days, latest streak, longest streak, full exact comma-separated token numbers, date range, rank score, weighted tokens, or source token values.
 - No real people, no brand logos, no screenshots, no watermarks, no QR code.
 - Use an original design. Do not copy or imitate any existing anime, manga, game, or film franchise. No existing characters, no straw-hat character, no named pirate crew, no skull-and-crossbones emblem, no Marine word or crest, no franchise flags, no named treasure symbols, no copied ship designs, and no exact proprietary bounty-poster template.
-- Do not invent extra metrics that conflict with the values above.
+- Do not invent extra metrics or extra badge tiers that conflict with the values above.
 - Avoid ornate fantasy card styling. This should look like a simple printed wanted poster from a fictional seafaring adventure world.

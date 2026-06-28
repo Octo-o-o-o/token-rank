@@ -109,6 +109,8 @@ Then read:
 
 Pass the complete prompt to `image_gen`, then save the generated bitmap into the project.
 
+Creature variation is randomized by default for image-generation prompts. Use `--variation-seed stable` for a reproducible prompt, or pass any custom string such as `--variation-seed octo-blue-runner`.
+
 Generate an avatar prompt:
 
 ```bash
@@ -259,6 +261,8 @@ If you do not want to install the skill, copy:
 ## Image Generation
 
 When Codex built-in `image_gen` / GPT-image-2 is available, the preferred workflow is script-generated prompt first, then one-shot image generation. The avatar/card art, text, rank symbols, and numbers all go into the generated bitmap. Normal image-model text imperfections are acceptable, but the prompt asks for the nickname, level, total token, daily average, and current streak to be large and clear.
+
+By default, each run writes a fresh `variationSeed` into the prompt so repeated generations produce more varied creature silhouettes and materials. Use `--variation-seed stable` or a custom seed when you want to reproduce a specific look.
 
 Generate the prompt:
 

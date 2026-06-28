@@ -109,6 +109,8 @@ python3 .agents/skills/token-rank/scripts/token_rank_card.py \
 
 把完整 prompt 交给 `image_gen`，并把生成的图片保存到项目目录。
 
+生图 prompt 默认每次都会生成新的 `variationSeed`，让形象轮廓、材质和姿态更随机。需要复现某次形象时，可以传 `--variation-seed stable`，或自定义字符串，例如 `--variation-seed octo-blue-runner`。
+
 生成头像 prompt：
 
 ```bash
@@ -259,6 +261,8 @@ Skill 默认只运行本机只读统计命令并生成本地文件。不要上�
 ## 生图 Prompt
 
 如果当前 Codex 会话有内置 `image_gen` / GPT-image-2，推荐流程是让脚本先产出完整整图 prompt，再把这段 prompt 一次性交给 `image_gen`。头像和卡片的视觉、文字、等级符号、数字都交给生图模型完成；允许存在普通生图模型的细小文字误差，但 prompt 会要求昵称、等级、总 token、日均 token 和连续天数足够大、足够清晰。
+
+脚本默认会在 prompt 里写入新的 `variationSeed`，让多次生成的玄幻动物不总是同一种标准龙、麒麟或狐狸。需要稳定复现时，使用 `--variation-seed stable` 或传入自定义 seed。
 
 生成 prompt：
 

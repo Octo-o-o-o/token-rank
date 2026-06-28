@@ -22,6 +22,7 @@ import math
 import mimetypes
 import os
 import random
+import secrets
 import shutil
 import subprocess
 from pathlib import Path
@@ -67,16 +68,60 @@ SOURCE_LABELS = {
 }
 
 SOURCE_CREATURES = {
-    "codex": ["星海章灵", "书卷玄枭", "八腕墨龙"],
-    "claude": ["月影灵狐", "白羽纸鹤", "静月鹿灵"],
-    "gemini": ["双星鸾鸟", "镜翼天猫", "星盘猞猁"],
-    "opencode": ["符文夜豹", "终端玄狼", "黑曜獾灵"],
-    "openclaw": ["金爪狮鹫", "风暴蝎尾狮", "曜爪天狮"],
-    "hermes": ["信风灵隼", "飞翼灵狐", "传令鹿灵"],
-    "cursor": ["光标麒麟", "游标星狐", "箭羽灵兽"],
-    "mixed": ["星渊麒麟", "棱镜幼龙", "万象奇美拉"],
-    "all": ["星尘小狐", "晶翼小龙", "雾眠鹿灵"],
+    "codex": ["星海章灵", "书卷玄枭", "八腕墨龙", "蓝环机巧章鱼", "星图乌鸦", "晶壳海马"],
+    "claude": ["月影灵狐", "白羽纸鹤", "静月鹿灵", "纸翼水獭", "绒角雪豹", "琥珀耳兔"],
+    "gemini": ["双星鸾鸟", "镜翼天猫", "星盘猞猁", "双尾星鲸", "棱镜飞蜥", "银环狐蝠"],
+    "opencode": ["符文夜豹", "终端玄狼", "黑曜獾灵", "荧线壁虎", "铁羽渡鸦", "霓虹刺猬"],
+    "openclaw": ["金爪狮鹫", "风暴蝎尾狮", "曜爪天狮", "赤鬃山猫", "电纹犀鸟", "铜角岩羊"],
+    "hermes": ["信风灵隼", "飞翼灵狐", "传令鹿灵", "云足羚羊", "羽冠鼬灵", "风铃飞马"],
+    "cursor": ["光标麒麟", "游标星狐", "箭羽灵兽", "流光箭鼬", "星针蜂鸟", "折线灵猫"],
+    "mixed": ["星渊麒麟", "棱镜幼龙", "万象奇美拉", "云潮鲲鹿", "星砂貘兽", "晶角鲸马"],
+    "all": ["星尘小狐", "晶翼小龙", "雾眠鹿灵", "绒尾星兔", "露光小貘", "铜铃小兽"],
 }
+
+CREATURE_MORPHOLOGIES = [
+    "unexpected compact silhouette with oversized ears, short legs, and one long ribbon tail",
+    "sleek runner silhouette with antlers, fin-like cheek crests, and a split comet tail",
+    "round guardian body, tiny wings, gemstone paws, and a floating halo crest",
+    "aquatic hybrid body with manta fins, soft horns, and luminous whiskers",
+    "bird-mammal silhouette with layered feather cape, small hooves, and a sharp mask-like face",
+    "insect-familiar silhouette with glassy wing plates, plush body, and delicate antennae",
+    "armored little beast with shell segments, long scarf-like mane, and bright observant eyes",
+    "cat-sized chimera with asymmetrical horns, cloud-like fur, and a curled constellation tail",
+]
+
+CREATURE_SURFACES = [
+    "opal shell, soft fur patches, and small glowing token-like freckles",
+    "porcelain face, translucent fins, and brushed-metal edge highlights",
+    "velvet dark coat, aurora glass horns, and embroidered circuit-like markings",
+    "matte paper texture, ink-wash shadows, and tiny foil sparks",
+    "faceted crystal mane, warm enamel scales, and pearlescent claws",
+    "wind-worn stone plates, mossy seams, and gentle internal blue light",
+    "athletic fabric accents, polished gem joints, and hand-painted streak marks",
+    "soft plush silhouette, luminous stitch lines, and constellation dust",
+]
+
+CREATURE_POSES = [
+    "mid-step as if just entering the frame, calm but alert",
+    "curled around the rank emblem like a protective familiar",
+    "floating lightly above the layout with a curious sideways glance",
+    "leaning forward in a quiet sprint, energetic but elegant",
+    "perched on an invisible ledge with one paw raised",
+    "turning back over the shoulder, giving the card a candid snapshot feel",
+    "sitting upright with ceremonial composure and a small mischievous detail",
+    "gliding diagonally through the composition without looking like a standard dragon",
+]
+
+CREATURE_ACCENTS = [
+    "tiny orbiting token motes",
+    "one small celestial compass mark",
+    "subtle terminal-grid sparkles",
+    "paper talisman ribbons without readable text",
+    "miniature glass crown-rays around the head",
+    "quiet aurora trail behind the tail",
+    "small meteor freckles on the cheeks",
+    "low-contrast rune-like geometry with no readable letters",
+]
 
 SOURCE_PALETTES = {
     "codex": ("#22D3EE", "#818CF8", "#FDE68A", "#020617", "#F8FAFC"),
@@ -1174,8 +1219,8 @@ def palette_for(source: str, seed: int) -> Tuple[str, str, str, str, str]:
     return palettes[seed % len(palettes)]
 
 
-def pick_creature(nickname: str, level: int, source: str, total: int) -> str:
-    seed = stable_seed(nickname, level, source, total)
+def pick_creature(nickname: str, level: int, source: str, total: int, visual_style: str = "", variation_seed: str = "") -> str:
+    seed = stable_seed("creature-v2", nickname, level, source, total, visual_style, variation_seed)
     if source in SOURCE_CREATURES:
         pool = SOURCE_CREATURES[source]
     elif level >= 64:
@@ -1183,6 +1228,30 @@ def pick_creature(nickname: str, level: int, source: str, total: int) -> str:
     else:
         pool = SOURCE_CREATURES["all"]
     return pool[seed % len(pool)]
+
+
+def creature_variation_lines(
+    nickname: str,
+    level: int,
+    source: str,
+    total: int,
+    visual_style: str,
+    variation_seed: str = "",
+) -> str:
+    rng = random.Random(stable_seed("creature-variation-v2", nickname, level, source, total, visual_style, variation_seed))
+    morphology = rng.choice(CREATURE_MORPHOLOGIES)
+    surface = rng.choice(CREATURE_SURFACES)
+    pose = rng.choice(CREATURE_POSES)
+    accents = rng.sample(CREATURE_ACCENTS, 2)
+    return "\n".join(
+        [
+            f"- Shape variation: {morphology}.",
+            f"- Surface/material mix: {surface}.",
+            f"- Pose/personality: {pose}.",
+            f"- Small accents: {accents[0]} and {accents[1]}.",
+            "- Randomness rule: treat the named species as a loose seed, not a fixed mascot. Make the creature feel fresh and visibly different across generations; avoid defaulting to a standard dragon, qilin, fox, wolf, or humanoid athlete unless the selected style explicitly needs that silhouette.",
+        ]
+    )
 
 
 def elegant_copy(level: int, creature: str) -> str:
@@ -1539,9 +1608,8 @@ def render_card_svg(
             '<rect x="70" y="74" width="940" height="1202" rx="48" fill="#0B1020" opacity="0.91"/>',
             '<rect x="70" y="74" width="940" height="1202" rx="48" fill="none" stroke="url(#edge)" stroke-width="4" opacity="0.90"/>',
             "</g>",
-            svg_text(120, 154, "VIBE TOKEN RANK", 28, 800, accent, opacity=0.95),
-            svg_text(120, 222, nickname[:18], 62, 850, fg),
-            svg_text(120, 272, "本机 Agent Token 修行卡", 28, 450, "#CBD5E1", opacity=0.92),
+            svg_text(120, 160, "Token Rank", 36, 800, accent, opacity=0.95),
+            svg_text(120, 242, nickname[:18], 62, 850, fg),
             f'<rect x="350" y="315" width="380" height="380" rx="64" fill="{secondary}" opacity="0.10"/>',
             f'<g transform="translate(350 315)">{avatar}</g>',
             f'<rect x="120" y="742" width="840" height="182" rx="32" fill="{primary}" opacity="0.14"/>',
@@ -1586,14 +1654,23 @@ def image_generation_prompts(
     platform: str = "generic",
     display_unit: str = "compact",
     public_safe: bool = False,
+    variation_seed: str = "",
 ) -> Dict[str, str]:
     source = dominant_source(summary)
-    creature = pick_creature(nickname, level_result.level, source, summary.weighted_tokens)
-    seed = stable_seed(nickname, creature, level_result.level, summary.weighted_tokens)
+    creature = pick_creature(nickname, level_result.level, source, summary.weighted_tokens, visual_style, variation_seed)
+    seed = stable_seed(nickname, creature, level_result.level, summary.weighted_tokens, variation_seed)
     primary, secondary, accent, _bg, _fg = palette_for(source, seed)
     source_label = SOURCE_LABELS.get(source, source)
     style = style_profile(visual_style)
     quote = elegant_metric_copy(level_result.level, creature, summary)
+    creature_variation = creature_variation_lines(
+        nickname,
+        level_result.level,
+        source,
+        summary.weighted_tokens,
+        visual_style,
+        variation_seed,
+    )
     badge_rows = prompt_badge_rows(level_result.level)
     badge_text = "\n".join(f"- badge row {index + 1} icons: {row}" for index, row in enumerate(badge_rows))
     total_label, total_value = headline_total_metric(summary)
@@ -1619,7 +1696,11 @@ def image_generation_prompts(
 Asset type: square Token Rank avatar generated entirely by image_gen.
 Primary request: create one finished 1:1 style-led fantasy animal avatar. Do not leave blank text areas and do not rely on later SVG/text composition.
 
-Subject: a fictional mythic animal, not a human and not a real person. Species direction: {creature}, influenced by {source_label}. The character should quietly imply this usage profile: Lv.{level_result.level}, top-tier wordless medal rank, {total_label} {stats["window_total"]}, {daily_label} {stats["daily"]}, current streak {summary.current_streak_days} days.
+Subject: a fictional mythic animal, not a human and not a real person. Base species seed: {creature}, influenced by {source_label}. The character should quietly imply this usage profile: Lv.{level_result.level}, top-tier wordless medal rank, {total_label} {stats["window_total"]}, {daily_label} {stats["daily"]}, current streak {summary.current_streak_days} days.
+Creative variation seed: {variation_seed or "stable"}. Use it only to diversify the creature design; do not render this seed as visible text.
+
+Character variation:
+{creature_variation}
 
 Style/medium: use the selected visual style as the primary art direction; do not force pixel art unless the selected style asks for it. Keep the avatar readable at small size with a clean silhouette, centered enough to recognize, polished but not overdecorated.
 Visual style preset: {style["name"]} / {style["zh"]}.
@@ -1665,9 +1746,11 @@ Elegant line to include as a small handwritten-style motto:
 「{quote}」
 
 Portrait subject:
-- Fictional mythic animal: {creature}
+- Fictional mythic animal seed: {creature}
 - Dominant source influence: {source_label}
+- Creative variation seed: {variation_seed or "stable"}. Use it only to diversify the portrait; do not render it as text.
 - Make it a lively hand-drawn manga-adventure animal portrait with a clear expression, clean silhouette, and printed halftone texture. It must not be a real person or a human character.
+{creature_variation}
 
 Visual style:
 - Visual style preset: {style["name"]} / {style["zh"]}.
@@ -1709,8 +1792,8 @@ Canvas and layout:
 - Use stable safe margins; no symbols cropped at the right edge. If badges are many, wrap them gracefully to multiple centered rows. Do not use multiplication notation such as x2 or ×2.
 
 Identity and rank data to show:
-- Title: VIBE TOKEN RANK
-- Subtitle: 本机 Agent Token 修行卡
+- Title: Token Rank
+- Do not add or render any second subtitle line under the title.
 - Nickname: {nickname}
 - Rank: Lv.{level_result.level}
 - Rank title: {rank_title(level_result.level)}
@@ -1730,9 +1813,11 @@ Elegant line to include:
 「{quote}」
 
 Animal avatar direction:
-- Fictional mythic animal: {creature}
+- Fictional mythic animal seed: {creature}
 - Dominant source influence: {source_label}
-- Pixel fantasy creature, arcane, calm, intelligent, companion-like; no human face and no real person.
+- Creative variation seed: {variation_seed or "stable"}. Use it only to diversify the animal/avatar treatment; do not render it as text.
+- Style-led fantasy creature, arcane, calm, intelligent, companion-like; no human face and no real person.
+{creature_variation}
 
 Visual style:
 - Visual style preset: {style["name"]} / {style["zh"]}.
@@ -1772,6 +1857,7 @@ def selected_image_prompt(
     platform: str = "generic",
     display_unit: str = "compact",
     public_safe: bool = False,
+    variation_seed: str = "",
 ) -> str:
     prompts = image_generation_prompts(
         nickname,
@@ -1781,6 +1867,7 @@ def selected_image_prompt(
         platform,
         display_unit,
         public_safe,
+        variation_seed,
     )
     return prompts["avatar" if mode == "avatar" else "card"]
 
@@ -1810,11 +1897,20 @@ def xhs_share_pack_prompts(
     visual_style: str,
     display_unit: str,
     public_safe: bool,
+    variation_seed: str,
 ) -> List[Dict[str, str]]:
     style = style_profile(visual_style)
     source = dominant_source(summary)
-    creature = pick_creature(nickname, level_result.level, source, summary.weighted_tokens)
+    creature = pick_creature(nickname, level_result.level, source, summary.weighted_tokens, visual_style, variation_seed)
     source_label = SOURCE_LABELS.get(source, source)
+    creature_variation = creature_variation_lines(
+        nickname,
+        level_result.level,
+        source,
+        summary.weighted_tokens,
+        visual_style,
+        variation_seed,
+    )
     quote = elegant_metric_copy(level_result.level, creature, summary)
     total_label, total_value_raw = headline_total_metric(summary)
     daily_label, daily_value_raw, _daily_weighted = headline_daily_metric(summary)
@@ -1852,7 +1948,10 @@ Secondary text:
 「{nickname} · {rank_title(level_result.level)}」
 「{total_label} {total_value}」
 
-Visual: a fictional mythic animal avatar ({creature}, influenced by {source_label}) as the anchor. Make it instantly readable in feed preview. The cover should feel intriguing and shareable, not noisy.
+Visual: a fictional mythic animal avatar ({creature}, influenced by {source_label}) as the anchor. Make it instantly readable in feed preview, and let its silhouette vary strongly instead of repeating a standard dragon/qilin/fox mascot. Creative variation seed: {variation_seed}; use it only to diversify the character and do not render it as text.
+Creature variation:
+{creature_variation}
+The cover should feel intriguing and shareable, not noisy.
 Layout: large hook at top or center, creature as strong visual anchor, one compact stat ribbon, tiny footer "本地只读 · 娱乐等级".
 Weak-position metadata: add tiny low-emphasis chips in a lower corner or footer strip, names only and no token values: {metadata_line}
 Avoid: dense data panels, long paragraphs, tiny labels, fake UI, platform chrome, clickbait symbols, real app screenshots.""",
@@ -1869,6 +1968,7 @@ Avoid: dense data panels, long paragraphs, tiny labels, fake UI, platform chrome
                 "xhs",
                 display_unit,
                 public_safe,
+                variation_seed,
             ),
         },
         {
@@ -2009,6 +2109,7 @@ def write_xhs_share_pack(
     visual_style: str,
     display_unit: str,
     public_safe: bool,
+    variation_seed: str,
 ) -> Dict[str, Any]:
     out_dir = Path(output)
     if out_dir.suffix:
@@ -2021,6 +2122,7 @@ def write_xhs_share_pack(
         visual_style,
         display_unit,
         public_safe,
+        variation_seed,
     )
     files: List[Dict[str, str]] = []
     for page in prompts:
@@ -2044,6 +2146,7 @@ def write_xhs_share_pack(
         platform="xhs",
         display_unit=display_unit,
         public_safe=public_safe,
+        variation_seed=variation_seed,
     )
     manifest = {
         "type": "xhs-share-pack",
@@ -2054,6 +2157,7 @@ def write_xhs_share_pack(
         "visualStyleName": style_profile(visual_style)["name"],
         "displayUnit": display_unit,
         "publicSafe": public_safe,
+        "variationSeed": variation_seed,
         "level": level_result.level,
         "rankTitle": rank_title(level_result.level),
         "symbols": level_symbols(level_result.level),
@@ -2130,6 +2234,7 @@ def write_summary_json(
     platform: str = "generic",
     display_unit: str = "compact",
     public_safe: bool = False,
+    variation_seed: str = "",
 ) -> None:
     total_label, total_value = headline_total_metric(summary)
     daily_label, daily_value, daily_weighted = headline_daily_metric(summary)
@@ -2143,6 +2248,7 @@ def write_summary_json(
         "platform": platform,
         "displayUnit": display_unit,
         "publicSafe": public_safe,
+        "variationSeed": variation_seed,
         "level": level_result.level,
         "rankTitle": rank_title(level_result.level),
         "symbols": level_symbols(level_result.level),
@@ -2210,6 +2316,7 @@ def write_summary_json(
             platform,
             display_unit,
             public_safe,
+            variation_seed,
         ),
     }
     path.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
@@ -2275,6 +2382,10 @@ def build_parser() -> argparse.ArgumentParser:
         help="Visible token unit style. auto uses zh for xhs-pack/--platform xhs, compact otherwise.",
     )
     parser.add_argument("--public-safe", action="store_true", help="Round visible values and omit source details for public sharing.")
+    parser.add_argument(
+        "--variation-seed",
+        help="Creative seed for image_gen creature variation. Default is random each run; use 'stable' or any custom string to reproduce a look.",
+    )
     parser.add_argument("--avatar-image", help="SVG fallback only: embed a pre-generated local image as avatar art.")
     parser.add_argument("--background-image", help="SVG fallback only: embed a pre-generated local image as card background art.")
     parser.add_argument("--level-profile", choices=["sqrt", "benchmark", "linear"], default=DEFAULT_LEVEL_PROFILE)
@@ -2289,6 +2400,22 @@ def build_parser() -> argparse.ArgumentParser:
 def resolve_window_end(until: Optional[str]) -> dt.date:
     parsed = parse_date(until)
     return parsed or dt.date.today()
+
+
+def resolve_variation_seed(
+    raw: Optional[str],
+    nickname: str,
+    summary: UsageSummary,
+    level_result: LevelResult,
+    visual_style: str,
+) -> str:
+    if raw and raw.strip():
+        value = raw.strip()
+        if value.lower() == "stable":
+            seed = stable_seed("variation-stable-v1", nickname, level_result.level, summary.weighted_tokens, visual_style)
+            return f"stable-{seed % 1_000_000:06d}"
+        return value
+    return secrets.token_hex(4)
 
 
 def main(argv: Optional[Sequence[str]] = None) -> int:
@@ -2315,6 +2442,7 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
 
     level_result = compute_level(summary, args)
     display_unit = resolve_display_unit(args.display_unit, args.mode, args.platform)
+    variation_seed = resolve_variation_seed(args.variation_seed, args.nickname, summary, level_result, args.visual_style)
 
     if args.mode == "xhs-pack":
         pack_result = write_xhs_share_pack(
@@ -2326,6 +2454,7 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
             args.visual_style,
             display_unit,
             args.public_safe,
+            variation_seed,
         )
         total_label, total_value = headline_total_metric(summary)
         daily_label, daily_value, _daily_weighted = headline_daily_metric(summary)
@@ -2336,6 +2465,7 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
             "platform": "xhs",
             "displayUnit": display_unit,
             "publicSafe": args.public_safe,
+            "variationSeed": variation_seed,
             "level": level_result.level,
             "symbols": level_symbols(level_result.level),
             "fullSymbols": full_level_symbols(level_result.level),
@@ -2370,6 +2500,7 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
                 args.platform,
                 display_unit,
                 args.public_safe,
+                variation_seed,
             ),
             encoding="utf-8",
         )
@@ -2402,6 +2533,7 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
         args.platform,
         display_unit,
         args.public_safe,
+        variation_seed,
     )
     total_label, total_value = headline_total_metric(summary)
     daily_label, daily_value, _daily_weighted = headline_daily_metric(summary)
@@ -2417,6 +2549,7 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
         "platform": args.platform,
         "displayUnit": display_unit,
         "publicSafe": args.public_safe,
+        "variationSeed": variation_seed,
         "level": level_result.level,
         "symbols": level_symbols(level_result.level),
         "fullSymbols": full_level_symbols(level_result.level),

@@ -17,7 +17,7 @@ A good card prompt should include:
 
 - Asset type: one-shot share card generated entirely by `image_gen`.
 - Canvas: vertical portrait 4:5, intended as a 1080x1350 social card.
-- Layout: title, nickname, avatar, level band, wrapped QQ-style badge rows, three core metrics, optional source-name chips, elegant line, footer.
+- Layout: single `Token Rank` title, nickname, avatar, level band, wrapped QQ-style badge rows, three core metrics, optional source-name chips, elegant line, footer. Do not use a separate subtitle under the title.
 - Badge rule: display only the highest two non-zero QQ-style badge tiers, repeat the visible icons one-by-one, and wrap to multiple rows when needed. Do not draw lower-tier leftovers after the top two tiers. Never use multiplication notation such as `x2` or `×2`.
 - T-medal visual rule: the highest-tier medal must be a wordless prestige icon. It must contain no letters, no visible `T`, no Chinese/English label, and no small caption. It should look clearly above a crown through scale, luminosity, halo, prismatic facets, or ceremonial framing.
 - Metric rule: show raw visible-window token total, raw visible-window daily average, current streak days, level, and top agent/model names only.
@@ -28,6 +28,8 @@ A good card prompt should include:
 - Top metadata rule: include top 2 agents and top 2 models as small name-only chips in weak visual positions such as a footer rail, lower corner, side caption, tiny paper-label strip, or faint stamp. Do not show token values. Do not let these chips compete with the nickname, level, animal portrait, badge row, or three core metrics.
 - Layout-quality rule: prefer a concise premium style-led share card over a dashboard: enough negative space, fewer boxes, no dense mini-tables, no terminal screenshots, and clear typographic hierarchy.
 - Visual rule: richer light, denser token constellations, and more ceremonial framing for stronger total/daily/level/streak signals, without explaining this mapping literally.
+- Creature variation rule: use the script-provided shape/material/pose/accent lines as strong guidance. Treat the named species as a loose seed, not a fixed mascot; avoid repeatedly defaulting to a standard dragon, qilin, fox, wolf, or humanoid athlete unless the selected style specifically calls for that silhouette.
+- Variation seed rule: include the script-generated `variationSeed` as a hidden creative cue only. It should change the animal design across repeated runs, but it must never appear as visible text in the image.
 - Text tolerance: minor small-text drift is acceptable; primary nickname, level, total, daily average, and streak should be large and clear.
 - Safety: no real people, no brand logos, no screenshots, no watermarks, no QR code.
 
@@ -45,6 +47,8 @@ A good avatar prompt should include:
 - Asset type: square avatar generated entirely by `image_gen`.
 - Subject: fictional mythic animal, never a human or real person.
 - Inputs: nickname, level, badges, token scale, dominant source, and streak as visual inspiration.
+- Variation: include a fresh silhouette, material mix, pose, and small accents from the generated prompt so repeated outputs do not look like the same mascot.
+- Variation seed: use the generated `variationSeed` to diversify the creature, but do not render the seed as text.
 - Style: style-led rendering based on the selected numbered preset, readable at small size, clean silhouette, arcane coding companion.
 - Background: match the selected preset, with subtle token/rank hints only when useful.
 - Safety: no text, no logos, no watermark, no UI frame.
