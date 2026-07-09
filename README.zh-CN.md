@@ -214,7 +214,7 @@ weighted = input + output + cache_creation + 0.25 * cache_read
 默认 `sqrt` 模型：
 
 ```text
-scoreTokens = totalWeighted + avgDailyWeighted(windowDays) * windowDays
+scoreTokens = totalWeighted + windowWeighted(windowDays)   # 近窗口加权总量被计入两次
 level = floor(3 * sqrt(scoreTokens / 1,000,000))
 ```
 

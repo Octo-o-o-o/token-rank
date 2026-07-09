@@ -66,7 +66,7 @@ If detailed fields are missing, use `totalTokens`.
 Default profile is `sqrt`, a QQ-style entertainment curve:
 
 ```text
-scoreTokens = totalWeighted + avgDailyWeighted(windowDays) * windowDays
+scoreTokens = totalWeighted + windowWeighted(windowDays)   # recent-window weighted total counted twice
 levelFloat = 3 * sqrt(scoreTokens / 1,000,000)
 level = floor(levelFloat), with minimum Lv.1 when any usage exists
 ```
@@ -74,10 +74,10 @@ level = floor(levelFloat), with minimum Lv.1 when any usage exists
 This keeps occasional usage low while allowing heavy sustained usage to reach T medals:
 
 ```text
-100K score tokens -> about Lv.1
-500K score tokens -> about Lv.3
-1M score tokens   -> about Lv.4
-3M score tokens   -> about Lv.7
+100K score tokens -> Lv.1 (minimum when any usage exists)
+1M score tokens   -> Lv.3
+4M score tokens   -> Lv.6
+100M score tokens -> Lv.30
 ```
 
 Use `--level-profile benchmark` only when a compressed scale is preferred. Use `--level-profile linear` to reproduce the old 1M tokens = 1 level behavior.
@@ -190,6 +190,8 @@ Use `01` for the original printed wanted-poster look: huge `WANTED` header, cent
 All styles must stay original and open-source-safe. Do not mention or copy any existing anime/manga franchise, sports league, fashion brand, magazine, card game, social template, character, logo, flag, skull mark, typography, or exact proprietary layout.
 
 ## Common Commands
+
+The commands below use the in-repo path `.agents/skills/token-rank/scripts/token_rank_card.py`. When the skill is installed elsewhere (for example `~/.agents/skills/token-rank`), replace that prefix with the actual folder containing this SKILL.md — resolve the script as `<skill-dir>/scripts/token_rank_card.py`, and verify the file exists before running.
 
 Generate a card:
 

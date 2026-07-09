@@ -214,7 +214,7 @@ If detailed fields are unavailable, it falls back to `totalTokens`.
 The default level curve is:
 
 ```text
-scoreTokens = totalWeighted + avgDailyWeighted(windowDays) * windowDays
+scoreTokens = totalWeighted + windowWeighted(windowDays)   # recent-window weighted total counted twice
 level = floor(3 * sqrt(scoreTokens / 1,000,000))
 ```
 
